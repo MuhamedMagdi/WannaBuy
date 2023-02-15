@@ -49,7 +49,7 @@ const dumpData = [
         from: "Amazon",
         title: "Android iPhone 14 Pro Max (128 GB) - Deep Purple",
         image: "https://m.media-amazon.com/images/I/71yzJoE7WlL._AC_SL1500_.jpg",
-        price: 47777,
+        price: 555555,
         targetedPrice: 45000,
         lastChecked: Date.now(),
         availability: false
