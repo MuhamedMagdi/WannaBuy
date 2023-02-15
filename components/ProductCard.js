@@ -1,12 +1,21 @@
-import { FlatList, Image, Linking, Text, TouchableOpacity, View } from 'react-native';
+import { Image, Linking, Text, TouchableOpacity, View } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 import moment from 'moment';
 
 const openUrl = (url) => Linking.canOpenURL(url).then(() => {
     Linking.openURL(url)
 })
 
+const formatNumber = (inputNumber) => {
+    let formattedNumber=(Number(inputNumber)).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+    const splitArray=formattedNumber.split('.');
+    if(splitArray.length>1){
+      formattedNumber=splitArray[0];
+    }
+    return(formattedNumber);
+};
+
 export default function ProductCard({
-    id,
     title,
     url,
     from,
@@ -26,7 +35,30 @@ export default function ProductCard({
             />
         </View>
         <View className="mt-5">
-            <Text numberOfLines={2} className="text-lg font-semibold leading-5">{title}</Text>
+            <View className="flex-row justify-between">
+                <Text className="text-xs font-light text-gray-400">{from}</Text>
+                <View className="flex-row items-center">
+                    <Ionicons name="time-outline" size={12} color="rgb(156, 163, 175)" />
+                    <Text className="pl-1 text-xs font-light text-gray-400">{moment(new Date(lastChecked)).fromNow()}</Text>
+                </View>
+            </View>
+            <Text numberOfLines={2} className="pt-1 text-lg font-semibold leading-5">{title}</Text>
+            <View className="flex-row self-center justify-between pt-3 divide-x divide-gray-200">
+                <View className="items-center px-3 w-1/2">
+                    <Text className="text-gray-300">Current Price</Text>
+                    <View className="flex-row">
+                        <Text className="text-xs font-semibold leading-4">EGP</Text>
+                        <Text className="font-bold text-3xl">{formatNumber(price)}</Text>
+                    </View>
+                </View>
+                <View className="items-center px-3 w-1/2">
+                    <Text className="text-gray-300">Targeted Price</Text>
+                    <View className="flex-row">
+                        <Text className="text-xs font-semibold leading-4">EGP</Text>
+                        <Text className="font-bold text-3xl">{formatNumber(targetedPrice)}</Text>
+                    </View>
+                </View>
+            </View>
             {
                 (availability) ? 
                 <TouchableOpacity onPress={() => openUrl(url)} className="bg-black flex-row justify-center w-full rounded-sm self-center mt-5 p-3">
