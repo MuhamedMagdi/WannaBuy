@@ -1,4 +1,4 @@
-import { Image, Linking, Text, TouchableOpacity, View } from 'react-native';
+import { Image, Linking, Text, Touchable, TouchableOpacity, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import moment from 'moment';
 
@@ -26,7 +26,7 @@ export default function ProductCard({
     availability
 }) {
   return (
-    <View className="bg-white rounded-sm px-4 py-3 mt-4">
+    <View className="bg-white rounded-sm px-4 py-3">
         <View className="bg-white rounded-xl">
             <Image
                 source={{uri: image}}
@@ -64,9 +64,9 @@ export default function ProductCard({
                 <TouchableOpacity onPress={() => openUrl(url)} className="bg-black flex-row justify-center w-full rounded-sm self-center mt-5 p-3">
                     <Text className="text-white font-bold">Buy Now</Text> 
                 </TouchableOpacity> :
-                <View className="bg-red-800 flex-row justify-center w-full rounded-sm self-center mt-5 p-3">
+                <TouchableOpacity onPress={() => openUrl(url)} className="bg-red-800 flex-row justify-center w-full rounded-sm self-center mt-5 p-3">
                     <Text className="text-white font-bold">Out Of Stock</Text> 
-                </View>
+                </TouchableOpacity>
             }
         </View>
     </View>
