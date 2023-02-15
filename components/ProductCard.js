@@ -17,23 +17,23 @@ export default function ProductCard({
     availability
 }) {
   return (
-    <View className="w-full bg-white rounded-3xl p-5 my-5">
+    <View className="bg-white rounded-sm px-4 py-3 mt-4">
         <View className="bg-white rounded-xl">
             <Image
                 source={{uri: image}}
-                className="w-full h-72"
+                className="w-full h-72 rounded-sm"
                 style={{resizeMode:"contain"}}
             />
         </View>
         <View className="mt-5">
-            <Text className="text-lg font-bold leading-5">{title}</Text>
+            <Text numberOfLines={2} className="text-lg font-semibold leading-5">{title}</Text>
             {
                 (availability) ? 
-                <TouchableOpacity onPress={() => openUrl(url)} className="bg-black flex-row justify-center w-10/12 rounded-xl self-center mt-5 p-3">
+                <TouchableOpacity onPress={() => openUrl(url)} className="bg-black flex-row justify-center w-full rounded-sm self-center mt-5 p-3">
                     <Text className="text-white font-bold">Buy Now</Text> 
                 </TouchableOpacity> :
 
-                <View className="bg-red-800 flex-row justify-center w-10/12 rounded-xl self-center mt-5 p-3">
+                <View className="bg-red-800 flex-row justify-center w-full rounded-sm self-center mt-5 p-3">
                     <Text className="text-white font-bold">Out Of Stock</Text> 
                 </View>
             }
