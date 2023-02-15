@@ -4,7 +4,7 @@ import ProductCard from './ProductCard';
 export default function ProductList({search}) {
   return (
     <FlatList 
-        className="w-11/12 mb-12"
+        className="w-11/12 mb-20 mt-3"
         data={dumpData} 
         keyExtractor={(product) => product.id}
         renderItem={({item}) => {
