@@ -5,7 +5,7 @@ export default function SearchBar ({
     setSearch,
 }) {
     return (
-        <View className="mb-3 flex-row items-center">
+        <View className="my-3 flex-row items-center">
             <TextInput 
                 inputMode="search"
                 value={search}

@@ -64,7 +64,6 @@ export default function ProductCard({
                 <TouchableOpacity onPress={() => openUrl(url)} className="bg-black flex-row justify-center w-full rounded-sm self-center mt-5 p-3">
                     <Text className="text-white font-bold">Buy Now</Text> 
                 </TouchableOpacity> :
-
                 <View className="bg-red-800 flex-row justify-center w-full rounded-sm self-center mt-5 p-3">
                     <Text className="text-white font-bold">Out Of Stock</Text> 
                 </View>
