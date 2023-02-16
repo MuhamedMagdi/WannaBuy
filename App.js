@@ -23,7 +23,7 @@ export default function App() {
         <Stack.Screen name="Home" component={Home}/>
         <Stack.Screen name="AddProduct" component={AddProduct} />
       </Stack.Navigator>
-      <StatusBar style="auto"/>
+      <StatusBar style="light"/>
     </NavigationContainer>
   );
 }
