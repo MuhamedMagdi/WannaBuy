@@ -9,7 +9,7 @@ export default function Home({ navigation }) {
     return (
         <SafeAreaView className="items-center justify-center bg-light-black">
             <SearchBar search={search} setSearch={setSearch} />
-            <ControlButtons navigation={ navigation } />
+            <ControlButtons navigation={navigation} />
             <ProductList search={search} />
         </SafeAreaView>
     );
