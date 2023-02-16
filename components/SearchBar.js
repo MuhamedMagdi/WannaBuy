@@ -11,7 +11,7 @@ export default function SearchBar ({
                 value={search}
                 placeholder="search"
                 onChange={(phrase) => setSearch(phrase.nativeEvent.text)}
-                className="block w-11/12 px-3 py-2 text-sm text-gray-900 border border-gray-300 rounded-md bg-gray-50 focus:ring-black/20 focus:border-black/40"
+                className="block w-11/12 px-3 py-2 text-sm text-dark-gray rounded-sm bg-slate-50 boarder border-light-black focus:ring-dark-gray focus:border-dark-gray"
             />
         </View>
     )
