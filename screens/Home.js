@@ -4,12 +4,12 @@ import SearchBar from '../components/SearchBar';
 import ProductList from '../components/ProductList';
 import ControlButtons from '../components/ControlButtons';
 
-export default function Home() {
+export default function Home({ navigation }) {
     const [search, setSearch] = useState('');
     return (
         <SafeAreaView className="items-center justify-center bg-light-black">
             <SearchBar search={search} setSearch={setSearch} />
-            <ControlButtons />
+            <ControlButtons navigation={ navigation } />
             <ProductList search={search} />
         </SafeAreaView>
     );
