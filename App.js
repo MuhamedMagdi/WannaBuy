@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
 import Home from './screens/Home';
 import AddProduct from './screens/AddProduct';
+import NavigationSection from './components/NavigationSection';
 
 const Stack = createNativeStackNavigator();
 
@@ -25,6 +26,7 @@ export default function App() {
                 <Stack.Screen name="Home" component={Home} />
                 <Stack.Screen name="AddProduct" component={AddProduct} />
             </Stack.Navigator>
+            <NavigationSection />
             <StatusBar style="light" />
         </NavigationContainer>
     );
