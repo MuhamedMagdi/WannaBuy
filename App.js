@@ -1,11 +1,13 @@
 import { DefaultTheme, NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
+import * as SystemUI from 'expo-system-ui';
 import Home from './screens/Home';
 import AddProduct from './screens/AddProduct';
 import NavigationSection from './components/NavigationSection';
 
 const Stack = createNativeStackNavigator();
+SystemUI.setBackgroundColorAsync("#2b2b2b");
 
 const navTheme = {
     ...DefaultTheme,
